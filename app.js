@@ -4,7 +4,9 @@ const app = Vue.createApp({
             showbooks: true,
             title:'The final Movie',
             author: 'Brandon Sanderson',
-            age: 45
+            age: 45,
+            x: 0,
+            y: 0
         }
     },
 
@@ -17,6 +19,10 @@ const app = Vue.createApp({
             if(data){
                 console.log(data);
             }
+        },
+        handleMouseMove(e) {
+            this.x = e.offsetX
+            this.y = e.offsetY
         }
     }
  });
