@@ -1,12 +1,13 @@
 const app = Vue.createApp({
     data() {
         return {
+            url: 'http://www.thenetninja.co.uk',
             showbooks: true,
-            title:'The final Movie',
-            author: 'Brandon Sanderson',
-            age: 45,
-            x: 0,
-            y: 0
+            books: [
+                {title: 'paradise at home', author: 'pattrick ruffos', img: 'assets/images(1).jpg', isFav: true},
+                {title: 'paradise at home', author: 'pattrick ruffos', img: 'assets/images(2).jpg', isFav: false},
+                {title: 'paradise at home', author: 'pattrick ruffos', img: 'assets/images(3).jpg', isFav: true}
+            ]
         }
     },
 
@@ -23,6 +24,9 @@ const app = Vue.createApp({
         handleMouseMove(e) {
             this.x = e.offsetX
             this.y = e.offsetY
+        },
+        toggleisFav(book) {
+            book.isFav = !book.isFav
         }
     }
  });
